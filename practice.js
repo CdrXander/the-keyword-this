@@ -7,15 +7,21 @@
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
       //Answer
+      ///TODO: Find the answer to this, probably in one of the lectures
 
   // 3) What is the difference between call and apply?
 
       //Answer
+      /*
+        They are both used to explicitly specify that "this" refers to.
+        With Call, you specify the value of "this" as the first argument, then any arguments passed to the function as arguments after that.
+        Apply's second argument is an array of arguments for the target function 
 
+      */
   // 4) What does .bind do?
 
       //Answer
-
+      //It is used to call a function with "this" set explicitly.
 
 //Next Problem
 
@@ -73,8 +79,8 @@ var getYear = function(){
 
 //Note(no tests)
   //Code Here
-
-
+console.log("Toyota Prius year is " + getYear.call(prius));
+console.log("Ford Mustang year is " + getYear.call(mustang));
 //New Problem
 
 var myUser = {
@@ -87,14 +93,16 @@ var getMyUsername = function() {
  return this.username;
 };
 
-var userName = getMyUsername(); //Fix this
+var userName = getMyUsername.call(myUser); //Fix this
 
 //Above you're given an object, and  a function. What will the getUsername function return?
 //Note(no tests)
-  //Answer Here
+  //Answer Here<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  //Whatever value the window object has stored under "username"
 
 //In the example above, what is the 'this keyword' bound to when getUsername runs?
 
-  //Answer Here
+  //Answer Here<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  //The global window object.
 
 //Fix the getMyUsername invocation so that userName will be equal to 'iliketurtles'.
